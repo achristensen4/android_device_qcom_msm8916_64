@@ -17,7 +17,7 @@ persist.radio.rat_on=combine
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # Start in cdma mode
-ro.telephony.default_network=5
+ro.telephony.default_network=4
 
 debug.sf.hw=0
 debug.egl.hw=0
@@ -29,12 +29,12 @@ persist.demo.hdmirotationlock=false
 debug.mdpcomp.idletime=600
 debug.enable.sglscale=1
 
-#ro.hdmi.enable=true
-#tunnel.decode=true
-#tunnel.audiovideo.decode=true
-#lpa.decode=false
-#lpa.use-stagefright=true
-#persist.speaker.prot.enable=false
+ro.hdmi.enable=true
+tunnel.decode=true
+tunnel.audiovideo.decode=true
+lpa.decode=true
+lpa.use-stagefright=true
+persist.speaker.prot.enable=true
 
 #
 # system props for the cne module
@@ -55,13 +55,13 @@ mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 
 # system prop for custom hls enhancements
-persist.media.hls.enhancements=false
+persist.media.hls.enhancements=true
 
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC DIVX DIVXHD
 mm.enable.qcom_parser=3407871
 
 # Default to AwesomePlayer
-media.stagefright.use-awesome=false
+media.stagefright.use-awesome=true
 
 #
 # system props for the data modules
@@ -85,7 +85,7 @@ ro.qualcomm.cabl=2
 #
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
-telephony.lteOnCdmaDevice=1
+telephony.lteOnCdmaDevice=0
 
 #
 # System props for bluetooh
@@ -94,14 +94,14 @@ bluetooth.hfp.client=1
 
 #Simulate sdcard on /data/media
 #
-persist.fuse_sdcard=true
+persist.fuse_sdcard=false
 
 #
 #snapdragon value add features
 #
-ro.qc.sdk.audio.ssr=false
+ro.qc.sdk.audio.ssr=true
 ##fluencetype can be "fluence" or "fluencepro" or "none"
-ro.qc.sdk.audio.fluencetype=none
+ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
@@ -112,18 +112,18 @@ audio.offload.buffer.size.kb=64
 #Minimum duration for offload playback in secs
 audio.offload.min.duration.secs=30
 #Enable offload audio video playback by default
-audio.offload.video=true
+audio.offload.video=false
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
 
 #System property for FM transmitter
-ro.fm.transmitter=false
+ro.fm.transmitter=true
 #enable dsp gapless mode by default
-audio.offload.gapless.enabled=true
+audio.offload.gapless.enabled=false
 #Audio voice concurrency related flags
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=true
-voice.voip.conc.disabled=true
+voice.playback.conc.disabled=false
+voice.record.conc.disabled=false
+voice.voip.conc.disabled=false
 
 #Set composition for USB
 persist.sys.usb.config=diag,serial_smd,rmnet_bam,adb
@@ -158,18 +158,18 @@ ro.sys.fw.trim_cache_percent=100
 ro.sys.fw.trim_enable_memory=1073741824
 
 #Enable Delay service restart
-ro.am.reschedule_service=true
+ro.am.reschedule_service=false
 
 # system property for PIP support
 persist.camera.pip.support=0
 
 #Enable B service adj transition by default
-ro.sys.fw.bservice_enable=true
-ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_enable=false
+ro.sys.fw.bservice_limit=0
 ro.sys.fw.bservice_age=5000
 
 #Optimal dex2oat threads for faster app installation
-ro.sys.fw.dex2oat_thread_count=4
+ro.sys.fw.dex2oat_thread_count=1
 #min/max cpu in core control
-ro.core_ctl_min_cpu=2
-ro.core_ctl_max_cpu=4
+ro.core_ctl_min_cpu=1
+ro.core_ctl_max_cpu=1
